@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Factory in Testing\Factory Pattern in Testing.csproj" />
+    <ProjectReference Include="..\Adding a Factory Provider\Adding a Factory Provider.csproj" />
   </ItemGroup>
 
 </Project>

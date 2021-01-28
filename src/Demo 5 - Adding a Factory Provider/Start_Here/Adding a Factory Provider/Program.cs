@@ -41,15 +41,11 @@ namespace Adding_a_Factory_Provider
 
             IPurchaseProviderFactory purchaseProviderFactory;
 
-            if(order.Sender.Country == "Sweden")
-            {
-                purchaseProviderFactory = new SwedenPurchaseProviderFactory();
-            }
-            else if (order.Sender.Country == "Australia")
-            {
-                purchaseProviderFactory = new AustraliaPurchaseProviderFactory();
-            }
-            else
+            var factoryProvider = new PurchaseProviderFactoryProvider();
+
+            purchaseProviderFactory = factoryProvider.CreateFactoryFor(order.Sender.Country);
+
+            if (purchaseProviderFactory == null)
             {
                 throw new NotSupportedException("Sender country has no purchase provider");
             }
